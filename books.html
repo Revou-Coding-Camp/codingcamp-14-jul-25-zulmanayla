@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Manager - My Website</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">RVC</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="profile.html">Our Profile</a>
+            <a href="books.html" class="active">Book Manager</a>
+            <a href="index.html#message-us">Message Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banner">
+            <img src="https://via.placeholder.com/1200x300" alt="Book Manager Banner">
+        </section>
+
+        <section class="book-manager">
+            <h2>Book Manager</h2>
+            <div class="book-actions">
+                <button onclick="showSection('add')">Add Book</button>
+                <button onclick="showSection('read')">Read Books</button>
+                <button onclick="showSection('edit')">Edit Book</button>
+                <button onclick="showSection('delete')">Delete Book</button>
+                <button onclick="showSection('search')">Search Book</button>
+            </div>
+
+            <div id="add" class="section" style="display: none;">
+                <h3>Add Book</h3>
+                <div class="form-group">
+                    <label for="add-isbn">ISBN (13 digits)</label>
+                    <input type="text" id="add-isbn" maxlength="13" required>
+                    <span id="add-isbn-error" class="error"></span>
+                </div>
+                <div class="form-group">
+                    <label for="add-title">Title</label>
+                    <input type="text" id="add-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="add-author">Author</label>
+                    <input type="text" id="add-author" required>
+                </div>
+                <div class="form-group">
+                    <label for="add-publisher">Publisher</label>
+                    <input type="text" id="add-publisher" required>
+                </div>
+                <div class="form-group">
+                    <label for="add-year">Publication Year (yyyy)</label>
+                    <input type="text" id="add-year" maxlength="4" required>
+                    <span id="add-year-error" class="error"></span>
+                </div>
+                <button onclick="addBook()">Save Book</button>
+            </div>
+
+            <div id="read" class="section" style="display: none;">
+                <h3>Book List</h3>
+                <table id="book-table">
+                    <thead>
+                        <tr>
+                            <th>ISBN</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Publisher</th>
+                            <th>Year</th>
+                        </tr>
+                    </thead>
+                    <tbody id="book-table-body"></tbody>
+                </table>
+            </div>
+
+            <div id="edit" class="section" style="display: none;">
+                <h3>Edit Book</h3>
+                <div class="form-group">
+                    <label for="edit-isbn-search">Enter ISBN to edit</label>
+                    <input type="text" id="edit-isbn-search" maxlength="13" required>
+                    <button onclick="searchForEdit()">Search</button>
+                </div>
+                <div id="edit-form" style="display: none;">
+                    <div class="form-group">
+                        <label for="edit-isbn">ISBN (13 digits)</label>
+                        <input type="text" id="edit-isbn" maxlength="13" required>
+                        <span id="edit-isbn-error" class="error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-title">Title</label>
+                        <input type="text" id="edit-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-author">Author</label>
+                        <input type="text" id="edit-author" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-publisher">Publisher</label>
+                        <input type="text" id="edit-publisher" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-year">Publication Year (yyyy)</label>
+                        <input type="text" id="edit-year" maxlength="4" required>
+                        <span id="edit-year-error" class="error"></span>
+                    </div>
+                    <button onclick="saveEdit()">Save Changes</button>
+                </div>
+            </div>
+
+            <div id="delete" class="section" style="display: none;">
+                <h3>Delete Book</h3>
+                <div class="form-group">
+                    <label for="delete-isbn">Enter ISBN to delete</label>
+                    <input type="text" id="delete-isbn" maxlength="13" required>
+                    <button onclick="deleteBook()">Delete</button>
+                </div>
+            </div>
+
+            <div id="search" class="section" style="display: none;">
+                <h3>Search Book</h3>
+                <div class="form-group">
+                    <label for="search-isbn">Enter ISBN to search</label>
+                    <input type="text" id="search-isbn" maxlength="13" required>
+                    <button onclick="searchBook()">Search</button>
+                </div>
+                <div id="search-result" class="result"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 My Website. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

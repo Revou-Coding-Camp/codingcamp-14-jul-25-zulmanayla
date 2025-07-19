@@ -1,0 +1,195 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav a.active {
+    color: #007bff;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
+
+.welcome {
+    text-align: center;
+    padding: 20px;
+}
+
+.contact, .book-manager {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: red;
+    font-size: 0.8em;
+    display: block;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: none;
+}
+
+.book-actions {
+    margin-bottom: 20px;
+}
+
+.book-actions button {
+    margin-right: 10px;
+}
+
+#book-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#book-table th, #book-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+#book-table th {
+    background-color: #f8f9fa;
+}
+
+.section {
+    margin-top: 20px;
+}
+
+.profile-content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.vision-mission {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.vision, .mission {
+    width: 45%;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-top: 1px solid #ddd;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav a {
+        margin: 10px 0;
+        display: block;
+    }
+
+    .banner img {
+        height: 150px;
+        object-fit: cover;
+    }
+
+    .contact, .book-manager {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .vision-mission {
+        flex-direction: column;
+    }
+
+    .vision, .mission {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    footer {
+        position: relative;
+    }
+
+    .book-actions button {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
