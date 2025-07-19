@@ -3,7 +3,7 @@ Book Manager
 
 Directory 
 
-company-profile/
+Book Manager /
 ├── css/
 │   └── style.css
 ├── js/
